@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "slamtracker",
+  "version": "1.0",
+  "description": "Roland Garros slamtracker",
+  "background": {
+    "scripts": ["js/ctxmenu.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["js/jquery-1.11.1.min.js"]
+    }
+   ],
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "notifications",
+    "http://*/*", "https://*/*"
+  ],
+   "icons": {
+      "48": "images/appicon.png",
+      "32": "images/appicon.png",
+      "16": "images/appicon.png"
+   }
+}
