@@ -1,6 +1,11 @@
 function onClickHandler(info, tab) {
+    var slamtrackerScript = 'js/slamtracker.js';
+
+    if (info.menuItemId == 'slamtracker-menu-usopen') {
+        slamtrackerScript = "js/usopen.js"
+    }
     chrome.tabs.executeScript(tab.id, {
-        file:'js/slamtracker.js'
+        file:slamtrackerScript
         }
     );
 }
@@ -9,7 +14,13 @@ chrome.contextMenus.onClicked.addListener(onClickHandler);
 
 chrome.runtime.onInstalled.addListener(function() {
     chrome.contextMenus.create({
-        'id':'slamtracker-menu',
-        'title': 'Cattura Slamtracker'
+        'id':'slamtracker-menu-rg',
+        'title': 'Cattura Roland Garros',
+        'documentUrlPatterns': ['http://*.rolandgarros.com/*']
+    });
+    chrome.contextMenus.create({
+        'id':'slamtracker-menu-usopen',
+        'title': 'Cattura USOpen',
+        'documentUrlPatterns': ['http://*.usopen.org/*']
     });
 });
