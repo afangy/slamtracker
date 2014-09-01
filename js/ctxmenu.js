@@ -2,7 +2,7 @@ function onClickHandler(info, tab) {
     var slamtrackerScript = 'js/slamtracker.js';
 
     if (info.menuItemId == 'slamtracker-menu-usopen') {
-        slamtrackerScript = "js/usopen.js"
+        slamtrackerScript = "js/slamtracker.js"
     }
     chrome.tabs.executeScript(tab.id, {
         file:slamtrackerScript
@@ -22,5 +22,10 @@ chrome.runtime.onInstalled.addListener(function() {
         'id':'slamtracker-menu-usopen',
         'title': 'Cattura USOpen',
         'documentUrlPatterns': ['http://*.usopen.org/*']
+    });
+    chrome.contextMenus.create({
+        'id':'slamtracker-menu-usopen',
+        'title': 'Cattura USOpen',
+        'documentUrlPatterns': ['http://*.winbledon.com/*']
     });
 });
