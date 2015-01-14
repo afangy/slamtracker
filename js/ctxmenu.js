@@ -26,6 +26,11 @@ chrome.runtime.onInstalled.addListener(function() {
     chrome.contextMenus.create({
         'id':'slamtracker-menu-usopen',
         'title': 'Cattura USOpen',
-        'documentUrlPatterns': ['http://*.winbledon.com/*']
+        'documentUrlPatterns': ['http://*.wimbledon.com/*']
+    });
+    chrome.contextMenus.create({
+        'id':'slamtracker-menu-ausopen',
+        'title': 'Cattura AUSOpen',
+        'documentUrlPatterns': ['http://*.ausopen.com/*']
     });
 });
